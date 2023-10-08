@@ -19,7 +19,11 @@ long int porridge(int n, long int masha, long int peter) {
     p_first = porridge(n-1, masha+all[n], peter);
     p_second = porridge(n-1, masha, peter+all[n]);
 
-    return min(p_first, p_second);
+    if (p_first > p_second) {
+        return p_second;
+    } else {
+        return p_first;
+    }
 }
 int main() {
     int n;
